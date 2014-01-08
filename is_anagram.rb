@@ -1,5 +1,9 @@
+def canonical(word)
+	word.downcase.split('').sort
+end
+
 def is_anagram?(string1, string2)
-	string1.downcase.split('').sort == string2.downcase.split('').sort
+	canonical(string1) == canonical(string2)
 end
 
 p is_anagram?('cinema', 'iceman') == true
