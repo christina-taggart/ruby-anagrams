@@ -8,13 +8,22 @@
 #   in compare word the you got yourself an anagram
 
 
-def is_anagram?(word, compare_word)
-  compare = compare_word.downcase.split("")
-  word.downcase.each_char do |letter|
-    compare.delete(letter) if compare.include?(letter)
-  end
-  compare == [] ? true : false
+# def is_anagram?(word, compare_word)
+#   compare = compare_word.downcase.split("")
+#   word.downcase.each_char do |letter|
+#     compare.delete(letter) if compare.include?(letter)
+#   end
+#   compare == [] ? true : false
+# end
+
+def canonical(word)
+  word.downcase.split("").sort.join
 end
+
+def is_anagram?(word1, word2)
+  canonical(word1) == canonical(word2)
+end
+
 
 
 # The method should be symmetric, i.e.,
