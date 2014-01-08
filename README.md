@@ -79,7 +79,7 @@ end
 
 ##Optimize Your Learning
 
-As you are coding consider and discuss: 
+As you are coding consider and discuss:
   * Do I have a clear understanding of how this procedure works?
   * Am I stuck because I know what I want to do but don't know how to say it in Ruby?
   * Am I stuck because my understanding of how anagrams work is to fuzzy or mistaken?
