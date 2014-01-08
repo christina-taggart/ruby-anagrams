@@ -1,13 +1,23 @@
-def is_anagram?(word1, word2)
-  return false if word1.length != word2.length
-  word1.downcase!
-  word2.downcase!
-  letters = word1.split("")
-  letters.each { |letter|
-    return false if !word2.include?(letter)
-  }
-  true
+def canonical(string)
+  string.downcase.split("").sort!
 end
+
+def is_anagram?(word1, word2)
+  canonical(word1) == canonical(word2)
+end
+
+#-----Version without canonical:-----
+
+# def is_anagram?(word1, word2)
+#   return false if word1.length != word2.length
+#   word1.downcase!
+#   word2.downcase!
+#   letters = word1.split("")
+#   letters.each { |letter|
+#     return false if !word2.include?(letter)
+#   }
+#   true
+# end
 
 #----DRIVERS-----
 # The method should be symmetric, i.e.,
