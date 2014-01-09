@@ -10,16 +10,21 @@
 # if not return false
 
 def is_anagram?(first_word, second_word)
-  first_word_array = first_word.downcase.split("").sort
-  second_word_array = second_word.downcase.split("").sort
-  return true if first_word_array == second_word_array
-  return false
+  canonical(first_word) == canonical(second_word)
 end
+
+def canonical(word)
+  word.downcase.split("").sort.join("")
+end
+
 
 
 # driver code
 p is_anagram?("cinema", "iceman") == true
 p is_anagram?("Cinema", "iceman") == true
 p is_anagram?("person", "pencil") == false
+p is_anagram?("cinema", "iceman") == true
+p is_anagram?("Cinema", "iceman") == true
 
-# is_anagram?("cinema", "iceman")
+p canonical("cinema") == "aceimn"
+p canonical("Cinema") == "aceimn"
