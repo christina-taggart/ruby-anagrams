@@ -5,22 +5,22 @@
 #if not they are not
 
 
-def is_anagram?(string1, string2)
-	if string1.downcase.split("").sort == string2.downcase.split("").sort 
-		p true
-	else
-		p false
-	end
-	
-
+def canonical(string)
+	string.downcase.split("").sort
 end
+
+def is_anagram?(string1, string2)
+	canonical(string1) == canonical(string2)
+end
+
+
 
 
 
 # The method should be symmetric, i.e.,
 # is_anagram?(word1, word2) == is_anagram?(word2, word1) for any two words
-is_anagram?('cinema', 'iceman') # => true
-is_anagram?('iceman', 'cinema') # => true
+p is_anagram?('cinema', 'iceman') # => true
+p is_anagram?('iceman', 'cinema') # => true
 
 # Pedantically, a word is always an anagram of itself.
 # This is called being "reflexive," i.e., is_anagram?(word, word) == true for any word
